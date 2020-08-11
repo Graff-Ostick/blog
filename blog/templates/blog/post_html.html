@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="C:/Users/RUS_LAN/Desktop/python/django/blog/rerun/blog/static/css/style.css">
     <title>reboot</title>
 </head>
 <body>
-
-    <div>
-        <h1><a href="#">Django BLOG</a></h1>
+<header>
+    <div class="text-logo">
+        <h1><a href="#">Django BLOG </a></h1>
     </div>
+</header>
 
-    {% for post in posts %}
+<div class="wrapper">
+    <div class="post">
+
+        {% for post in posts %}
         <p>{{post.published_date}}</p>
         <h2><a href="#">{{post.title}}</a></h2>
         <p>{{post.text}}</p>
-    {% endfor %}
+        {% endfor %}
 
-     <div>
-        <p>Published 04.08.2020, 22:15</p>
-        <h2><a href="#">First post</a></h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Aliquam cumque explicabo id in inventore iusto quisquam tempora tenetur.
-            Consectetur debitis doloribus laborum possimus vel. A cumque deleniti iste iure repellendus?
-        </p>
-    <hr>
-     </div>
+    </div>
+</div>
 
+<footer>
+    <div class="wrapper">
+        <h1 class="text-logo">Powered by Graff Ostick</h1>
+        <a href="#">Contact me</a>
+    </div>
+</footer>
 </body>
 </html>
