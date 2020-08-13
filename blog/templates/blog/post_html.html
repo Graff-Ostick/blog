@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="C:/Users/RUS_LAN/Desktop/python/django/blog/rerun/blog/static/css/style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
     <title>reboot</title>
 </head>
 <body>
@@ -15,21 +16,25 @@
 </header>
 
 <div class="wrapper">
+
+
+    {% for post in posts %}
     <div class="post">
-
-        {% for post in posts %}
-        <p>{{post.published_date}}</p>
-        <h2><a href="#">{{post.title}}</a></h2>
-        <p>{{post.text}}</p>
-        {% endfor %}
-
+        <p class="date">published: {{post.published_date}}</p>
+        <h2 class="title"><a href="#">{{post.title}}</a></h2>
+        <p class="post-text">{{post.text}}</p>
     </div>
+    {% endfor %}
+
+
+    <div class="push"></div>
 </div>
 
-<footer>
-    <div class="wrapper">
-        <h1 class="text-logo">Powered by Graff Ostick</h1>
-        <a href="#">Contact me</a>
+<footer class="footer">
+
+    <h1 class="text-logo">Powered by Graff Ostick</h1>
+    <div class="contact">
+        <a href="#" class="btn">Contact me</a>
     </div>
 </footer>
 </body>
